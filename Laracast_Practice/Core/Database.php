@@ -5,7 +5,7 @@ class Database
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = 'root', $password = '')
+    public function __construct($config, $username = 'root', $password = '1234')
     {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
 
@@ -37,7 +37,7 @@ class Database
     {
         $result = $this->find();
 
-        if (! $result) {
+        if (!$result) {
             abort();
         }
 
